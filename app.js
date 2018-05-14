@@ -9,7 +9,27 @@ app.use(express.static(__dirname+"/public"));
 
 
 app.get('/', function(req, res){
-	res.render('layout');
+		var cate= [
+			{
+				category : "Mobile"
+				
+			},
+			{
+				category : "Home Applicane"
+
+			},
+			{
+				category : "Fashion"
+			},
+			{
+				category : "Electronics"
+			}
+		];
+
+
+
+	var pagedata = { title : "Home Page", pagename : 'home/index', cateData : cate};
+	res.render('layout', pagedata);
 });
 
 app.get('/signup', function(req, res){
@@ -22,6 +42,14 @@ app.get('/about', function(req, res){
 	res.render('layout', pagedata);
 });	
 
+
+app.get('/test', function(req, res){
+	// var city = ["indore", "ujjain", "bhopal"]
+	var city = [{x : "indore"}, {x : "ujjain"}, {x : "bhopal"}];
+
+	var obj = { a : "rohit", b: city };
+	res.render('test', obj);
+});
 
 app.listen(3000, function(){
 	console.log("Running");

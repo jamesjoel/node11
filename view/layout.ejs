@@ -1,77 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+  <title><%= title; %></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
 
-  <head>
+  <!-- jQuery library -->
+  <script src="/js/jquery.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <!-- Latest compiled JavaScript -->
+  <script src="/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    /*@media screen and (max-width: 480px)  
+    {
+        #myTopNav ul li
+        {
+           float: left;
+           /*position: absolute;*/
+        }  
 
-    <title><%= title; %></title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/css/full-width-pics.css" rel="stylesheet">
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Signup</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
+    }*/
+  </style>
+</head>
+<body>
+<div class="contrainer-fluid" style="border-bottom:1px solid #000">
+  <div class="container">
+    <div class="collapse navbar-collapse myNav" id="myTopNav">
+      <ul class="pull-right nav navbar-nav">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Signup</a></li>
+      <li><a href="#">My Cart(0)</a></li>
+      
+      </ul>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">TSS</a>
+      <button data-toggle="collapse" data-target=".myNav" class="navbar-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse myNav">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control">
         </div>
-      </div>
-    </nav>
+      </form>
+      <ul class="nav navbar-nav navbar-center navbar-right">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
 
-    <!-- Header - set the background image for the header in the line below -->
-    <header class="py-5 bg-image-full" style="background-image: url('https://unsplash.it/1900/1080?image=1076');">
-      <img class="img-fluid d-block mx-auto" src="http://placehold.it/200x200&text=Logo" alt="">
-    </header>
+    </div>
+  </div>
+</nav>
+<div class="contrainer-fluid" style="margin-top: -20px;">
+  <div style="background-image: url('images/1.jpg'); background-size: 100% 100%; height:200px; width: 100%;"></div>
+</div>
+
+<%- include(pagename); %>
 
 
-    <%- include(pagename) %>
+<div class="contrainer-fluid">
+  <div class="container">
+  </div>
+</div>
 
-
-
-
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-
-  </body>
-
+</body>
 </html>
