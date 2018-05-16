@@ -1,52 +1,17 @@
 var express = require('express');
 var app = express();
 
+var category = require('./model/category');
+var product = require('./model/product');
+
 app.set("view engine", "ejs");
 app.set("views", "view");
 
 app.use(express.static(__dirname+"/public"));
-var cate= [
-			{
-				category : "Mobile"
-				
-			},
-			{
-				category : "Home Applicane"
 
-			},
-			{
-				category : "Fashion"
-			},
-			{
-				category : "Electronics"
-			}
-		];
-
-var pro = [
-		{
-			productName : "Sony",
-			productPrice : 25000,
-			imgUrl : "images/2.jpg"
-		},
-		{
-			productName : "HTC",
-			productPrice : 22000,
-			imgUrl : "images/2.jpg"
-		},
-		{
-			productName : "Iphone",
-			productPrice : 55000,
-			imgUrl : "images/4.png"
-		},
-		{
-			productName : "Samsung TV",
-			productPrice : 36500,
-			imgUrl : "images/3.jpg"
-		}
-	];
 
 app.get('/', function(req, res){
-	var pagedata = { title : "Home Page", pagename : 'home/index', cateData : cate, product : pro};
+	var pagedata = { title : "Home Page", pagename : 'home/index', cateData : category.getAll, product : product.getAll};
 	res.render('layout', pagedata);
 });
 
